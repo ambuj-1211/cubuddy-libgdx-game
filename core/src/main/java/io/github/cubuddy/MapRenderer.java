@@ -87,8 +87,13 @@ public class MapRenderer {
         Texture bobTexture = new Texture(Gdx.files.internal("data/bob.png"));
         TextureRegion[] split = new TextureRegion(bobTexture).split(20, 20)[0];
         TextureRegion[] mirror = new TextureRegion(bobTexture).split(20, 20)[0];
+        Texture wichTexture = new Texture(Gdx.files.internal("data/bob2.png"));
+//        TextureRegion[] split2 = new TextureRegion(wichTexture).split(20,20)[0];
+//        TextureRegion[] mirror2 = new TextureRegion(wichTexture).split(20,20)[0];
         for (TextureRegion region : mirror)
             region.flip(true, false);
+//        for (TextureRegion region : mirror2)
+//            region.flip(true,false);
         spikes = split[5];
         bobRight = new Animation<>(0.1f, split[0], split[1]);
         bobLeft = new Animation<>(0.1f, mirror[0], mirror[1]);
@@ -96,6 +101,8 @@ public class MapRenderer {
         bobJumpLeft = new Animation<>(0.1f, mirror[2], mirror[3]);
         bobIdleRight = new Animation<>(0.5f, split[0], split[4]);
         bobIdleLeft = new Animation<>(0.5f, mirror[0], mirror[4]);
+//        bobIdleRight = new Animation<>(0.5f, split2[1], split2[2], split2[3], split2[4]);
+//        bobIdleLeft = new Animation<>(0.5f, mirror2[1], mirror2[2], mirror2[3], mirror2[4]);
         bobDead = new Animation<>(0.2f, split[0]);
         split = new TextureRegion(bobTexture).split(20, 20)[1];
         cube = split[0];
